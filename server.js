@@ -1,5 +1,14 @@
 var express = require('express');
 var share = require('share');
+
+//
+var Showdown = require('showdown');
+var converter = new Showdown.converter();
+
+converter.makeHtml('#hello markdown!');
+
+
+
 // var hat = require('hat');
 var app = express();
 

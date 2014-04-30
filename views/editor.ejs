@@ -73,14 +73,28 @@ window.onload = function() {
     render();
     doc.on('change', render);
 
+    var scrollHeight, a;
     //apr29adrian
     editor.getSession().on('changeScrollTop',function(scroll){
+      
+      a = editor.getSession().getDocument().getLength();
+      console.log(a);
+      // scrollHeight = editor.getSession().getDocument().getLength() + editor.renderer.lineHeight;
+      // console.log('scrollHeight', scrollHeight);
       console.log('editor scroll hit', scroll);
     });
 
+    // var a = editor.getSession().getDocument().getLength();
+    // console.log('a', a);
+    // var b = editor.renderer.lineHeight;
+    // console.log('b', b);
+
     $('#right').scroll(function(){
+      var lengthScroll = $('#right')[0].scrollHeight - $('#right').height();
       var height = $('#right').scrollTop();
       console.log('html view scroll hit', height);
+      console.log('ScrollHeight', lengthScroll);
+      // console.log('ScrollHeight1', lengthScroll1);
     });
 
   });
